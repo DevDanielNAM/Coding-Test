@@ -7,12 +7,12 @@ def solution(answers):
     
     correct_cnt = {1:0, 2:0, 3:0}
     
-    for i in range(len(answers)):
-        if answers[i] == p1[i % len(p1)]:
+    for i, answer in enumerate(answers):
+        if answer == p1[i % len(p1)]:
             correct_cnt[1] += 1
-        if answers[i] == p2[i % len(p2)]:
+        if answer == p2[i % len(p2)]:
             correct_cnt[2] += 1
-        if answers[i] == p3[i % len(p3)]:
+        if answer == p3[i % len(p3)]:
             correct_cnt[3] += 1
     
     max_score = max(correct_cnt.values())
