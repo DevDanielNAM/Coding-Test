@@ -3,9 +3,7 @@ def solution(arr1, arr2):
     
     for i in range(len(arr1)):        
         for j in range(len(arr2[0])):
-            num = 0
             for k in range(len(arr2)):
-                num += arr1[i][k] * arr2[k][j]
-            answer[i][j] = num
+                answer[i][j] += arr1[i][k] * arr2[k][j]            
             
     return answer
