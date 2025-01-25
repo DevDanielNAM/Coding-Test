@@ -8,17 +8,14 @@ def solution(answers):
     correct_cnt = {1:0, 2:0, 3:0}
     
     for i in range(len(answers)):
-        if answers[i] == p1[0]:
+        if answers[i] == p1[i % len(p1)]:
             correct_cnt[1] += 1
-        if answers[i] == p2[0]:
+        if answers[i] == p2[i % len(p2)]:
             correct_cnt[2] += 1
-        if answers[i] == p3[0]:
+        if answers[i] == p3[i % len(p3)]:
             correct_cnt[3] += 1
-            
-        p1.append(p1.pop(0))
-        p2.append(p2.pop(0))
-        p3.append(p3.pop(0))
     
-    answer = [k for k,v in correct_cnt.items() if max(correct_cnt.values()) == v]
+    max_score = max(correct_cnt.values())
+    answer = [k for k, v in correct_cnt.items() if v == max_score]
     
     return answer
