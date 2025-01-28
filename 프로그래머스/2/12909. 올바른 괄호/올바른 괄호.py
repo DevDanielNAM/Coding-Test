@@ -1,17 +1,12 @@
 def solution(s):
-    answer = True    
     stack = []
     
-    for i in s:
-        if i == '(':
-            stack.append(i)
+    for char in s:
+        if char == '(':
+            stack.append(char)
+        elif stack:
+            stack.pop()
         else:
-            if len(stack) > 0 and stack[-1] == '(':
-                stack.pop()
-            else:
-                return False
+            return False
 
-    if len(stack) > 0 :
-        return False
-    
-    return True
+    return not stack
