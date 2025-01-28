@@ -30,3 +30,35 @@ def solution(n, k, cmd):
         answer[i - 1] = "X"
         
     return ''.join(answer)
+
+# def solution(n, k, cmd):
+#     answer = 'O' * n
+    
+#     cur_idx = k
+#     stack = []    
+#     arr = [i for i in range(n)]
+#     origin_arr = arr[::]
+    
+#     for c in cmd:
+#         if len(c) > 1:
+#             c1, c2 = map(str, c.split())
+#             if c1 == 'U':
+#                 cur_idx = (cur_idx - int(c2)) % len(arr)
+#             else:
+#                 cur_idx = (cur_idx + int(c2)) % len(arr)
+            
+#         else:
+#             c1 = c
+#             if c1 == 'C':
+#                 stack.append((cur_idx, arr.pop(cur_idx)))
+#             else:
+#                 z = stack.pop()
+#                 arr.insert(z[0], z[1])
+                
+#     dif = set(origin_arr) - set(arr)
+#     answer = list(answer)
+#     for d in dif:
+#         answer[d] = 'X'
+#     answer = ''.join(answer)
+    
+#     return answer
